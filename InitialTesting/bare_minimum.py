@@ -49,6 +49,12 @@ cap. release ()
 print("Released video capture")
 
 
+# maximize the red component of each pixel
+for ii in range(frame.shape[0]):
+    for jj in range(frame.shape[1]):
+        frame[ii, jj, 0] = 255
+
+cv2.imshow('Edited', frame)
 
 # print(frame)
 print(canny)
@@ -57,7 +63,7 @@ print(canny.shape)
 print(frame.shape)
 # print(canny.__dict__)
 
-np.savetxt("canny.txt", canny, fmt='%1.0f')
+# np.savetxt("canny.txt", canny, fmt='%1.0f')
 
 # canny.tofile("canny.txt")
 
