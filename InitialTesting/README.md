@@ -47,5 +47,43 @@ Oh, the whole image is just a gradient because none of the original pixel data i
 
 <img src="script-capture-6.png" alt="triple gradient makes me vanish" width="600"/>
 
-Good for you if you saw that coming. Now I want an angry red filter which grows from the center of the picture towards the edges
+Good for you if you saw that coming. Now I want an angry red filter which grows from the center of the picture towards the edges.
 
+This is what the red component of the image should look like:
+
+<img src="script-capture-7.png" alt="center grayscale gradient" width="600"/>
+
+It's calculated with the following function, which needs the x and y coordinate of the current pixel, the center of the image, and the degree of gradient falloff:
+
+```python
+def red_function(x, y, cx, cy, n):
+    # calculate distance to center
+    dx = abs(x - cx)
+    dy = abs(y - cy)
+
+    # calculate max distance to center
+    max_d = np.sqrt(pow(cx, 2) + pow(cy, 2))
+
+    # calculate actual distance to center
+    d = np.sqrt(pow(dx, 2) + pow(dy, 2))
+
+    # distance / max distance tells us how strong the red component should be
+    f = d / float(max_d)
+
+    # raise the fraction to the power of n, which will adjust the falloff
+    red = pow(f, n) * 255
+
+    return red
+```
+
+When applied to my image, I don't look quite as angry as I was hoping...
+
+<img src="script-capture-8.png" alt="ANGRY RED BORDER" width="600"/>
+
+Maybe I should increase the red value instead of replacing the red value, which will help the middle of the picture look less blue...
+
+<img src="script-capture-9.png" alt="ANGRIER RED BORDER" width="600"/>
+
+Yeah, that's better. Now increase the falloff to 6, and it's perfect:
+
+<img src="script-capture-10.png" alt="ANGRIER RED BORDER" width="600"/>
