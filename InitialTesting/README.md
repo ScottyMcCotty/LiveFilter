@@ -86,8 +86,10 @@ Maybe I should increase the red value instead of replacing the red value, which 
 
 Yeah, that's better. Now increase the falloff to 6, and it's perfect:
 
-<img src="script-capture-10.png" alt="ANGRIER RED BORDER" width="600"/>
+<img src="script-capture-10.png" alt="ANGRIEST RED BORDER" width="600"/>
 
 One problem... up until now I've only been testing on still images where I have as much processing time as I need.
 
 ## My algorithm is brutally slow
+
+## My image links aren't working in github
