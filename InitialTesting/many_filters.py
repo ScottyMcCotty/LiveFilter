@@ -19,7 +19,7 @@ while (True):
 
     # mirror the original video frame so that every video frame appears correct
     frame = cv2.flip(frame, 1)
-    
+
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     inversion = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     sketch = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -50,6 +50,9 @@ print("Exited while loop")
 cap. release ()
 
 print("Released video capture")
+
+while not (cv2.waitKey(1) & 0xFF==ord('f')):
+    pass
 
 cv2.destroyAllWindows()
 
