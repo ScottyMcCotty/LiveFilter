@@ -13,3 +13,4 @@ One google search later and I've added a `mirroring_video.py` script that works 
 
 <img src="script-capture-2.png" alt="original image next to mirrored image" width="600"/>
 
+I combined the two scripts and now `many_filters.py` produces 7 video feeds which all match the movement I wanted.

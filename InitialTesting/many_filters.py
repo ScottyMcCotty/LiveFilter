@@ -16,6 +16,10 @@ while (True):
     print("In while loop")
 
     ret, frame = cap. read ()
+
+    # mirror the original video frame so that every video frame appears correct
+    frame = cv2.flip(frame, 1)
+    
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     inversion = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     sketch = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
