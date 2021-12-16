@@ -52,7 +52,7 @@ print("Released video capture")
 # maximize the red component of each pixel
 for ii in range(frame.shape[0]):
     for jj in range(frame.shape[1]):
-        frame[ii, jj, 0] = 255
+        frame[ii, jj, 2] = 255
 
 cv2.imshow('Edited', frame)
 

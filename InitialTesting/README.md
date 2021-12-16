@@ -27,3 +27,9 @@ For some reason, this made blue become the dominant color in the image:
 
 <img src="script-capture-3.png" alt="overwhelming blue when it's supposed to be red" width="600"/>
 
+Maybe the components are in reverse order for some reason? Instead I'll try `frame[ii, jj, 2] = 255` to hopefully adjust the red component.
+
+Okay, that fixed it. Red wins this time:
+
+<img src="script-capture-4.png" alt="overwhelming red, as expected" width="600"/>
+
