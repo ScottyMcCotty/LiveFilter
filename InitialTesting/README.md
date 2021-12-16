@@ -33,3 +33,19 @@ Okay, that fixed it. Red wins this time:
 
 <img src="script-capture-4.png" alt="overwhelming red, as expected" width="600"/>
 
+## Not sure why, but these colors are definitely being stored and read from `BGR` format
+
+Can I apply a fun little red gradient effect, weakest in the top right and growing towards the bottom left?
+
+Yep, and it looks pretty cool:
+
+<img src="script-capture-5.png" alt="red gradient in bottom right corner" width="600"/>
+
+What about a triple gradient in each of the three corners?
+
+Oh, the whole image is just a gradient because none of the original pixel data is being used in the calculation. I guess I shouldn't be surprised by this:
+
+<img src="script-capture-6.png" alt="triple gradient makes me vanish" width="600"/>
+
+Good for you if you saw that coming. Now I want an angry red filter which grows from the center of the picture towards the edges
+

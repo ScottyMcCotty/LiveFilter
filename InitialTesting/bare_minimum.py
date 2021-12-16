@@ -52,7 +52,17 @@ print("Released video capture")
 # maximize the red component of each pixel
 for ii in range(frame.shape[0]):
     for jj in range(frame.shape[1]):
-        frame[ii, jj, 2] = 255
+
+        # this is WRONG, colors are stored in BGR format
+        # frame[ii, jj, 0] = 255
+
+        # makes overwhelming red
+        # frame[ii, jj, 2] = 255
+
+        # triple gradient
+        frame[ii, jj, 0] = ((frame.shape[0] - ii) / float(frame.shape[0])) * (jj / float(frame.shape[1])) * 255
+        frame[ii, jj, 1] = (ii / float(frame.shape[0])) * ((frame.shape[1] - jj) / float(frame.shape[1])) * 255
+        frame[ii, jj, 2] = (ii / float(frame.shape[0])) * (jj / float(frame.shape[1])) * 255
 
 cv2.imshow('Edited', frame)
 
